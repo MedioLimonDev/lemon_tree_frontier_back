@@ -1,4 +1,4 @@
-package com.frontier.back.lemon_tree.config;
+package com.frontier.back.lemon_tree;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
