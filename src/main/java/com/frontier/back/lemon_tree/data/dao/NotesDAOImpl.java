@@ -18,8 +18,11 @@ public class NotesDAOImpl implements NotesDAO{
         sql.append("SELECT s.title, fr.respuesta_escrita AS response, n.description AS note FROM flow_record fr ");
         sql.append("INNER JOIN notes n ON n.id_flow_record = fr.id ");
         sql.append("INNER JOIN step s ON s.id = fr.id_step ");
-        sql.append("WHERE fr.id_record = ");
+        sql.append("WHERE fr.id_record = '");
         sql.append(idRecord);
+        sql.append("'");
+
+
 
         return jdbcTemplate.query(
                 sql.toString(),
