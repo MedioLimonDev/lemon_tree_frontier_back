@@ -13,7 +13,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     @Override
     public boolean loginValidation(EmployeeVO employeeVO){
         StringBuilder sql = new StringBuilder();
-        sql.append(" SELECT count(*) FROM employee WHERE email like '");
+        sql.append(" SELECT count(*) FROM employee WHERE email LIKE '");
         sql.append(employeeVO.getEmail());
         sql.append("' AND password = '");
         sql.append(employeeVO.getPassword());
