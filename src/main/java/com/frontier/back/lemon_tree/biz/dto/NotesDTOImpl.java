@@ -18,6 +18,11 @@ public class NotesDTOImpl implements NotesDTO {
         return buildListVO(notesDAO.getByIdRecord(idRecord));
     }
 
+    @Override
+    public void addNote(String note, int id_flow_record){
+        notesDAO.addNote(note, id_flow_record);
+    }
+
     public static NotesVO buildVO(Notes notes){
         if(notes != null){
             NotesVO notesVO = new NotesVO();

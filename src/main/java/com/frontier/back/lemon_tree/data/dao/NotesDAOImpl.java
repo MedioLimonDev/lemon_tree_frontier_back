@@ -11,9 +11,24 @@ public class NotesDAOImpl implements NotesDAO{
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    private StringBuilder sql;
+
+    @Override
+    public void addNote(String note, int id_flow_record){
+        sql = new StringBuilder();
+
+        sql.append("INSERT INTO notes(description, id_flow_record) VALUES(\"");
+        sql.append(note);
+        sql.append("\",");
+        sql.append(id_flow_record);
+        sql.append(")");
+
+        jdbcTemplate.execute(sql.toString());
+    }
+
     @Override
     public List<Notes> getByIdRecord(int idRecord) {
-        StringBuilder sql = new StringBuilder();
+        sql = new StringBuilder();
 
         sql.append("SELECT s.title, fr.respuesta_escrita AS response, n.description AS note FROM flow_record fr ");
         sql.append("INNER JOIN notes n ON n.id_flow_record = fr.id ");
@@ -21,8 +36,6 @@ public class NotesDAOImpl implements NotesDAO{
         sql.append("WHERE fr.id_record = '");
         sql.append(idRecord);
         sql.append("'");
-
-
 
         return jdbcTemplate.query(
                 sql.toString(),
