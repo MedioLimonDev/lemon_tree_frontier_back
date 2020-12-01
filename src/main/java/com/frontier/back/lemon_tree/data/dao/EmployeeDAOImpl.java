@@ -10,9 +10,11 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    private StringBuilder sql;
+
     @Override
     public boolean loginValidation(EmployeeVO employeeVO){
-        StringBuilder sql = new StringBuilder();
+        sql = new StringBuilder();
         sql.append(" SELECT count(*) FROM employee WHERE email LIKE '");
         sql.append(employeeVO.getEmail());
         sql.append("' AND password = '");
