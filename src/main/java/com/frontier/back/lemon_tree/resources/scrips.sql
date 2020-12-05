@@ -53,3 +53,6 @@ INSERT INTO lemontree2.flow_record
 (id_record, id_step, id_response, respuesta_escrita)
 VALUES
 (?,?,?,"");
+
+--Seleccionar el último id agregado en record
+SELECT max(id) AS id FROM flow_record WHERE id_employee = ? AND fg_active = 1;
