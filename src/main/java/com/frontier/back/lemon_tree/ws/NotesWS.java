@@ -15,7 +15,7 @@ public class NotesWS {
     @Autowired
     private NotesDTO notesDTO;
 
-    @PostMapping("/getByIdRecord")
+    @PostMapping("/get-by-id-record")
     public Response getByIdRecord(@RequestBody RecordVO recordVO){
         List<NotesVO> responseNotes =  notesDTO.getByIdRecord(recordVO.getId());
 

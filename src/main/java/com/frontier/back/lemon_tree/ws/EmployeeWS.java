@@ -14,7 +14,7 @@ public class EmployeeWS {
     @Autowired
     private EmployeeDTO employeeDTO;
 
-    @PostMapping("/")
+    @PostMapping("/get")
     public Response loginValidation(@RequestBody EmployeeVO employeeVO){
         boolean bandera = employeeDTO.loginValidation(employeeVO);
         return Response.status(Response.Status.OK)
