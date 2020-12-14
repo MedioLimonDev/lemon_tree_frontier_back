@@ -1,12 +1,10 @@
 package com.frontier.back.lemon_tree.data.dao;
 
 import com.frontier.back.lemon_tree.data.entity.Employee;
-import com.frontier.back.lemon_tree.data.entity.Notes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
