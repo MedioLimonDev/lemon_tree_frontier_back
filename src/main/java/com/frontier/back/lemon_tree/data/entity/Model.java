@@ -1,11 +1,11 @@
 package com.frontier.back.lemon_tree.data.entity;
 
 public class Model {
-    private int  id;
+    protected int id;
 
-    private int created_at;
+    protected int created_at;
 
-    private int updated_at;
+    protected int updated_at;
 
     public int getId() {
         return id;
