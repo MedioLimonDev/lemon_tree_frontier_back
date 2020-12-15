@@ -9,16 +9,25 @@ import javax.ws.rs.core.Response;
 
 
 @RestController
-@RequestMapping("/login")
+@RequestMapping("/employee")
 public class EmployeeWS {
     @Autowired
     private EmployeeDTO employeeDTO;
 
-    @PostMapping("/get")
+    @PostMapping("/login")
     public Response loginValidation(@RequestBody EmployeeVO employeeVO){
         boolean bandera = employeeDTO.loginValidation(employeeVO);
         return Response.status(Response.Status.OK)
                 .entity(bandera)
+                .type(MediaType.APPLICATION_JSON)
+                .build();
+    }
+
+    @PostMapping("/get_employee_information")
+    public Response getEmployeeInformation(@RequestBody EmployeeVO employeeVO){
+        EmployeeVO employeeResponse = employeeDTO.getEmployeeInformation(employeeVO);
+        return Response.status(Response.Status.OK)
+                .entity(employeeResponse)
                 .type(MediaType.APPLICATION_JSON)
                 .build();
     }

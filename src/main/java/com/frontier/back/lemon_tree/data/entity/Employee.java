@@ -1,11 +1,20 @@
-package com.frontier.back.lemon_tree.biz.vo;
+package com.frontier.back.lemon_tree.data.entity;
 
-public class EmployeeVO extends ModelVO{
+public class Employee extends Model {
     private String name;
 
     private String email;
 
     private String password;
+
+    public Employee() { }
+
+    public Employee(int id, String name, String email) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.email = email;
+    }
 
     public String getName() {
         return name;
