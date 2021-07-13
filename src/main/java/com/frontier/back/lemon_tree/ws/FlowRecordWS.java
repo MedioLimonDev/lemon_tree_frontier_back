@@ -1,6 +1,7 @@
 package com.frontier.back.lemon_tree.ws;
 
 import com.frontier.back.lemon_tree.biz.dto.FlowRecordDTO;
+import com.frontier.back.lemon_tree.biz.output.StaticInformationVO;
 import com.frontier.back.lemon_tree.biz.vo.FlowRecordVO;
 import com.frontier.back.lemon_tree.biz.vo.NotesVO;
 import com.frontier.back.lemon_tree.biz.vo.RecordVO;
@@ -33,4 +34,13 @@ public class FlowRecordWS {
                 .type(MediaType.APPLICATION_JSON)
                 .build();
     }//Checar que aquí no va el entity
+
+    @PostMapping("/get-static-information")
+    public Response getStaticInformation(@RequestBody FlowRecordVO flowRecordVO){
+        List<StaticInformationVO> staticInformationVOList = flowRecordDTO.getStaticInformation(flowRecordVO.getIdRecord());
+        return Response.status(Response.Status.OK)
+                .entity(staticInformationVOList)
+                .type(MediaType.APPLICATION_JSON)
+                .build();
+    }
 }

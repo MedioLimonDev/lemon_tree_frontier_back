@@ -3,9 +3,9 @@ package com.frontier.back.lemon_tree.biz.vo;
 public class ModelVO {
     protected int  id;
 
-    protected int created_at;
+    protected int createdAt;
 
-    protected int updated_at;
+    protected int updatedAt;
 
     public int getId() {
         return id;
@@ -15,19 +15,19 @@ public class ModelVO {
         this.id = id;
     }
 
-    public int getCreated_at() {
-        return created_at;
+    public int getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(int created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(int createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public int getUpdated_at() {
-        return updated_at;
+    public int getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(int updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(int updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

@@ -16,8 +16,6 @@ public class NotesDAOImpl implements NotesDAO{
 
     @Override
     public void addNote(String note, int id_flow_record) throws DataAccessException{
-
-
         try {
             sql = new StringBuilder();
 
